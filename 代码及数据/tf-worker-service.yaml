@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+spec:
+  ports:
+  - {port: 2222, targetPort: 2222}
+  selector: {name: tensorflow-worker2}
+metadata:
+  labels: {name: tensorflow-worker2, role: service}
+  name: tensorflow-wk2-service
+

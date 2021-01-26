@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata: 
+  name: tensorflow-ps2
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels: 
+        name: tensorflow-ps2
+        role: ps
+    spec:
+      containers:
+      - name: ps
+        image: tensorflow/tensorflow
+        ports:
+        - containerPort: 2222
+
